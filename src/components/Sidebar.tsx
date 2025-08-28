@@ -48,7 +48,7 @@ const Sidebar = () => {
               Download Report
             </Button>
             <p className="text-xs text-muted-foreground text-center">
-              Developed by Team XYZ - SIH 2025
+              Developed by Vision Verse - SIH 2025
             </p>
           </div>
         </CardContent>
