@@ -21,10 +21,6 @@ const Index = () => {
               <StatisticsCards />
             </div>
             
-            <div className="mb-6">
-              <SentimentChart />
-            </div>
-            
             <CommentsTable />
           </div>
           

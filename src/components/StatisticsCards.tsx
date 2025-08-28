@@ -5,8 +5,8 @@ const StatisticsCards = () => {
     { 
       label: "Total Com", 
       value: "245", 
-      icon: <BarChart3 className="w-5 h-5 text-primary" />,
-      trend: true 
+      icon: <BarChart3 className="w-5 h-5 text-positive" />,
+      hasIcon: true 
     },
     { 
       label: "Positive", 
@@ -16,37 +16,30 @@ const StatisticsCards = () => {
     { 
       label: "Neutral", 
       value: "800", 
-      color: "text-neutral" 
+      color: "text-foreground" 
     },
     { 
       label: "Section", 
-      value: "800", 
+      value: "", 
       icon: <TrendingUp className="w-5 h-5 text-positive" />,
-      trend: true 
+      hasIcon: true 
     },
     { 
       label: "Negative", 
       value: "450", 
-      color: "text-negative" 
+      color: "text-foreground" 
     },
   ];
 
   return (
-    <div className="flex space-x-8 mb-8">
+    <div className="flex items-end space-x-12 mb-8">
       {stats.map((stat, index) => (
-        <div key={index} className="flex flex-col items-center">
-          <div className="flex items-center space-x-2 mb-2">
-            {stat.icon && stat.icon}
-            {stat.trend && (
-              <span className={`text-3xl font-bold ${stat.color || "text-foreground"}`}>
-                {stat.value}
-              </span>
-            )}
-            {!stat.trend && (
-              <span className={`text-3xl font-bold ${stat.color || "text-foreground"}`}>
-                {stat.value}
-              </span>
-            )}
+        <div key={index} className="flex flex-col items-start">
+          <div className="flex items-center space-x-1 mb-1">
+            {stat.hasIcon && stat.icon}
+            <span className={`text-4xl font-bold ${stat.color || "text-foreground"}`}>
+              {stat.value}
+            </span>
           </div>
           <span className="text-sm text-muted-foreground">{stat.label}</span>
         </div>

@@ -4,12 +4,12 @@ import { Download } from "lucide-react";
 
 const Sidebar = () => {
   const wordCloudWords = [
-    { text: "Compliance", size: "text-4xl", color: "text-primary" },
-    { text: "Penalty", size: "text-2xl", color: "text-foreground" },
-    { text: "Taxation", size: "text-2xl", color: "text-foreground" },
-    { text: "Simplify", size: "text-3xl", color: "text-primary" },
-    { text: "Reporting", size: "text-xl", color: "text-muted-foreground" },
-    { text: "Deadline", size: "text-xl", color: "text-muted-foreground" },
+    { text: "Compliance", size: "text-6xl", color: "text-primary", weight: "font-bold" },
+    { text: "Penalty", size: "text-2xl", color: "text-primary", weight: "font-normal" },
+    { text: "Taxation", size: "text-2xl", color: "text-primary", weight: "font-normal" },
+    { text: "Simplify", size: "text-4xl", color: "text-primary", weight: "font-bold" },
+    { text: "Reporting", size: "text-2xl", color: "text-primary", weight: "font-normal" },
+    { text: "Deadline", size: "text-4xl", color: "text-primary", weight: "font-bold" },
   ];
 
   return (
@@ -32,18 +32,18 @@ const Sidebar = () => {
           <CardTitle>Word Cloud</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-wrap gap-2 items-center justify-center py-8">
+          <div className="flex flex-wrap gap-3 items-center justify-center py-8 min-h-[200px]">
             {wordCloudWords.map((word, index) => (
               <span
                 key={index}
-                className={`${word.size} ${word.color} font-bold leading-tight`}
+                className={`${word.size} ${word.color} ${word.weight} leading-tight`}
               >
                 {word.text}
               </span>
             ))}
           </div>
           <div className="mt-6 space-y-4">
-            <Button className="w-full" size="lg">
+            <Button className="w-full bg-primary hover:bg-primary/90" size="lg">
               <Download className="w-4 h-4 mr-2" />
               Download Report
             </Button>
